@@ -1,6 +1,5 @@
 # Live demo:
-
-
+https://jnggerg.github.io/terkepesz/
 
 # Játékleírás:
 Ebben az egyszemélyes játékban egy 11x11-es négyzetrácsos térképre kell lehelyezni különböző alakzatú, különböző
