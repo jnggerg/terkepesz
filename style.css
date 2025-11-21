@@ -1,0 +1,157 @@
+body {
+    background-image: url("assets/krumplibg.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.time-left-text span{
+    font-size: x-large;
+}
+
+.zone-row{
+    display: flex;
+}
+
+.zone-element{
+    background-size: cover;
+    margin: 3px;
+    max-height: 64px !important;
+    max-width: 64px !important;
+    height: 64px;
+    width: 64px;
+}
+
+.zone-element.clickable:hover{
+    cursor:grab;
+}
+
+.blank-element{
+    background-image: url("assets/blank.png");
+}
+
+.farm-element{
+    background-image: url("assets/farm.png");
+}
+
+.town-element{
+    background-image: url("assets/town.png");
+}
+
+.mountain-element{
+    background-image: url("assets/mountain.png");
+}
+
+.water-element{
+    background-image: url("assets/water.png");
+}
+
+.forest-element{
+    background-image: url("assets/forest.png");
+}
+
+.seasons div{
+    border: 5px;
+    border-radius: 6px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    display: grid;
+    border-style: dotted;
+}
+
+.selected{
+    transition-duration: 0.5s;
+    border: 5px !important;
+    border-color: #a80000 !important;
+    border-style: solid !important;
+}
+
+#spring{
+    border-color: #668b1f;
+    background-color: rgb(181, 235, 137);
+    color: black;
+}
+
+#summer{
+    border-color: #a89022;
+    background-color: #dae272;
+    color: black;
+}
+
+#autumn{
+    border-color: #d35122;
+    background-color: #e29072;
+}
+
+#winter{
+    border-color: #145d99;
+    background-color: #2882cc;
+}
+
+
+.element-modifying a
+{
+    margin: 10px;
+}
+
+#random-element-{
+    background-color: gray;
+    padding: 40px;
+}
+
+.invalid-selection{
+    transition-duration: 0.075s;
+    border: 4px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 6px;
+}
+
+.valid-selection{
+    transition-duration: 0.075s;
+    border: 4px;
+    border-style: solid;
+    border-color: green;
+    border-radius: 6px;
+}
+
+.current-selection-position{
+    transition-duration: 0.075s;
+    border: 2px;
+    border-style: dotted;
+    border-color: blue;
+    border-radius: 6px;
+}
+
+.current-selection-position-invalid{
+    transition-duration: 0.075s;
+    border: 2px;
+    border-style: solid;
+    border-color: #ff764c;
+    border-radius: 6px;
+}
+
+.current-selection-position-valid{
+    transition-duration: 0.075s;
+    border: 2px;
+    border-style: solid;
+    border-color: #73ff00;
+    border-radius: 6px;
+}
+
+.mission-card{
+    width: 100%;
+}
