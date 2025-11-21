@@ -3,7 +3,7 @@ https://jnggerg.github.io/terkepesz/
 
 # Játékleírás:
 Ebben az egyszemélyes játékban egy 11x11-es négyzetrácsos térképre kell lehelyezni különböző alakzatú, különböző
-tereptípusú térképelemeket. Minden elemhez tartozik egy időérték (1 vagy 2), a játék 28 időegységből áll. A játék
+tereptípusú térképelemeket. Minden elemhez tartozik egy időérték (1 vagy 2). A játék
 végén (vagy közben) a négyzetrács aktuális állapota alapján kell pár ellenőrzést (küldetést) elvégezni, és ez alapján
 alakul ki a végső pontszám.
 ## A játék időtartama
@@ -15,5 +15,4 @@ időegységgel rendelkező térképelemet kapunk, a térképelemet még lehelyez
 A 28 időegység egy évet jelképez. Ez felbontható 4 évszakra, mindegyik évszak 7 időgységig tart. Ha a térképelemek
 húzása közben az összesített időérték eléri, vagy meghaladja a 7 többszörösét, az évszak véget ér.
 Minden évszak végén 2 küldetéskártyáért tudunk pontszámot kapni. A tavasz végén az A-B küldetésért, a nyár végén
-a B-C küldetésért, az ősz végén a C-D küldetésért, a tél végén pedig a D-A küldetésért tudunk pontokat szerezni. A
-négy küldetésnél egyenként fel kell tüntetni évszakonként, melyik küldetésre hány pontot kaptunk!
+a B-C küldetésért, az ősz végén a C-D küldetésért, a tél végén pedig a D-A küldetésért tudunk pontokat szerezni.
