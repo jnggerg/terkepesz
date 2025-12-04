@@ -33,7 +33,8 @@ const LOCALE_HU = {
         "timeValue": "Időérték",
         "gameOver": "Vége",
         "gameOverDesc": "A játéknak vége! Ha új játékot kezdenél, nyomj az 'Újraindítás' gombra!",
-        "ok": "Ok"
+        "ok": "Ok",
+        "lang": "🇭🇺"
     },
     "help": {
         "gameplay": "Játékmenet",
@@ -87,7 +88,8 @@ const LOCALE_EN = {
         "timeValue": "Time Value",
         "gameOver": "Game Over",
         "gameOverDesc": "The game is over! If you want to play again, press the 'Restart Game' button!",
-        "ok": "Ok"
+        "ok": "Ok",
+        "lang": "🇬🇧"
     },
     "help": {
         "gameplay": "Gameplay",
@@ -123,6 +125,8 @@ function setLanguage(lang) {
 }
 
 function toggleLanguage() {
+    const flag = currentLang === 'hu' ? '🇬🇧' : '🇭🇺';
+    document.getElementById('lang-toggle').textContent = flag;
     const newLang = currentLang === 'hu' ? 'en' : 'hu';
     setLanguage(newLang);
     // refresh missions for proper translation

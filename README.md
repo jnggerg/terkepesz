@@ -1,6 +1,11 @@
 # Live demo:
 https://jnggerg.github.io/terkepesz/
 
+# About the project:
+The game is built in Vanilla JS, HTML, CSS and Bootstrap.
+It inlcudes a random mission list, change between EN/HU languages.
+Gamestate is stored in localstorage.
+
 # Game Description:
 In this single-player game, you must place various shapes of terrain tiles with different terrain types onto an 11×11 grid map.
 Each tile has an associated time value (1 or 2). At the end of the game (or during the game), you must perform several checks (missions) based on the current state of the grid,
