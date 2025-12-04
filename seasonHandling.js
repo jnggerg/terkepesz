@@ -1,17 +1,18 @@
 function updateSeasonPoints(season) {
     const seasonPointsCounterHtml = document.getElementById(`${season}${SEASON_POINTS_SUFFIX}`);
+    const pointsLabel = currentLang === 'hu' ? 'pont' : 'points';
     switch (season) {
         case SPRING:
-            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.spring} pont`;
+            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.spring}\n ${pointsLabel}`;
             break;
         case SUMMER:
-            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.summer} pont`;
+            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.summer}\n ${pointsLabel}`;
             break;
         case AUTUMN:
-            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.autumn} pont`;
+            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.autumn}\n ${pointsLabel}`;
             break;
         case WINTER:
-            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.winter} pont`;
+            seasonPointsCounterHtml.innerText = `${gameState.pointsTracking.winter}\n ${pointsLabel}`;
             break;
     }
 }

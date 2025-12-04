@@ -41,17 +41,21 @@ function initializeMissions(isCached) {
 
         const missionTitleHtml = document.createElement('div');
         missionTitleHtml.classList.add('card-header');
-        missionTitleHtml.innerText = `${selectedMission.title} (${(selectedMission.id+1)}. Küldetés)`;
+        const translatedTitle = getMissionTitle(selectedMission.name);
+        const missionLabel = currentLang === 'hu' ? 'Küldetés' : 'Mission';
+        missionTitleHtml.innerText = `${translatedTitle} (${(selectedMission.id+1)}. ${missionLabel})`;
 
         const missionDescriptionHtml = document.createElement('div');
         missionDescriptionHtml.classList.add('card-text');
-        missionDescriptionHtml.innerText = selectedMission.description;
+        const translatedDesc = getMissionDescription(selectedMission.name);
+        missionDescriptionHtml.innerText = translatedDesc;
         missionBodyHtml.append(missionDescriptionHtml);
 
         const missionPointsHtml = document.createElement('div');
         missionPointsHtml.classList.add('card-footer');
         missionPointsHtml.id = `${selectedMission.id}${SEASON_MISSION_POINTS_SUFFIX}`;
-        missionPointsHtml.innerText = `Pontok: ${selectedMission.points_aquired}`;
+        const pointsLabel = currentLang === 'hu' ? 'Pontok' : 'Points';
+        missionPointsHtml.innerText = `${pointsLabel}: ${selectedMission.points_aquired}`;
 
         missionHtml.append(missionTitleHtml, missionBodyHtml, missionPointsHtml);
         return missionHtml;

@@ -68,7 +68,10 @@ body::before {
     height: 80px;
     width: 80px;
     text-align: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-style: dotted;
 }
 

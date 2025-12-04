@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>A Térképész</title>
+  <title data-i18n="ui.title"></title>
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,70 +19,63 @@
   <div class="container-fluid">
     <div class="row align-items-center mb-3">
       <div class="col">
-        <h1 class="mb-0" style="font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 2px;">A Térképész</h1>
+        <h1 class="mb-0" style="font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 2px;" data-i18n="ui.title"></h1>
       </div>
       <div class="col-auto">
-        <a class="btn btn-secondary me-2" onclick="restartGame()">
-          Játék újraindítása
-        </a>
-        <a class="btn btn-secondary" onclick="showHelp()">
-          Help
-        </a>
+        <a class="btn btn-secondary me-2" onclick="restartGame()" data-i18n="ui.restart"></a>
+        <a class="btn btn-secondary me-2" onclick="showHelp()" data-i18n="ui.help"></a>
+        <a class="btn btn-secondary" id="lang-toggle" onclick="toggleLanguage()">EN / HU</a>
       </div>
     </div>
 
     <div class="row row-cols-auto">
       <div class="col-6 col-sm-12 col-lg-6" id="game-table">
-        <!-- Ide jönnek JS-ből a mezők -->
+        <!-- Fields are generated from JS -->
       </div>
       <div class="col-6 col-sm-12 col-lg-6">
         <div class="row time-left-text">
-          <h2 class="col">Hátralevő idő:</h2>
+          <h2 class="col" data-i18n="ui.timeLeft"></h2>
           <span class="col" id="time-left">0</span>
         </div>
         <div class="row">
-          <h2 class="col">Összes pontszám:</h2>
-          <span class="col" id="all-points">0 pont</span>
+          <h2 class="col" data-i18n="ui.totalPoints"></h2>
+          <span class="col" id="all-points">0 <span data-i18n="ui.points"></span></span>
         </div>
         <div class="row seasons">
           <div class="col-2 offset-1" id="spring">
-            <span>Tavasz</span>
-            <span id="spring-points">0 pont</span>
+            <span data-i18n="ui.spring"></span>
+            <span id="spring-points"></span>
           </div>
           <div class="col-2 offset-1" id="summer">
-            <span>Nyár</span>
-            <span id="summer-points">0 pont</span>
+            <span data-i18n="ui.summer"></span>
+            <span id="summer-points"></span>
           </div>
           <div class="col-2 offset-1" id="autumn">
-            <span>Ősz</span>
-            <span id="autumn-points">0 pont</span>
+            <span data-i18n="ui.autumn"></span>
+            <span id="autumn-points"></span>
           </div>
           <div class="col-2 offset-1" id="winter">
-            <span>Tél</span>
-            <span id="winter-points">0 pont</span>
+            <span data-i18n="ui.winter"></span>
+            <span id="winter-points"></span>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-3 element-modifying">
-            <a class="btn btn-secondary" id="rotate" onclick="rotateElement()">
-              Forgatás
-            </a>
-            <a class="btn btn-secondary" id="mirror" onclick="mirrorElement()">
-              Tükrözés
-            </a>
+          <div class="col-3 element-modifying d-flex flex-column gap-2">
+            <a class="btn btn-secondary w-75" id="rotate" onclick="rotateElement()" data-i18n="ui.rotate"></a>
+            <a class="btn btn-secondary w-75" id="mirror" onclick="mirrorElement()" data-i18n="ui.mirror"></a>
           </div>
           <div class="col-4" id="random-element-container">
-            <!-- Ide jön majd JS-ből a random elem -->
+            <!-- Random element is generated from JS -->
           </div>
           <div class="col">
-            <span>Időérték:</span>
+            <span data-i18n="ui.timeValue"></span>:
             <span id="time-points">0</span>
           </div>
         </div>
         <hr>
         <div class="row" id="season-mission-list">
-          <!-- Ide jönnek majd JS-ből a véletlenszerű küldetések -->
+          <!-- Random missions are generated from JS -->
         </div>
       </div>
     </div>
@@ -92,27 +85,23 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-black">Segítség</h1>
+          <h1 class="modal-title fs-5 text-black" data-i18n="ui.help"></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-black">
-          <h3>Játékmenet</h3>
-          <p>A játék célja, hogy a lehető legtöbb pontot gyűjtsd össze a rendelkezésedre álló idő alatt.
-            Ehhez különböző térképelemeket helyezhetsz el a játéktáblán, amelyek különböző évszakokhoz tartoznak.
-            Minden évszakhoz tartozik egy küldetéslista, amely megmutatja, hogy mely elemek elhelyezésével
-            szerezhetsz pontokat.</p>
-          <h3>Vezérlés</h3>
+          <h3 data-i18n="help.gameplay"></h3>
+          <p data-i18n="help.gameplayDesc"></p>
+          <h3 data-i18n="help.controls"></h3>
           <ul>
-            <li><strong>Elem forgatása:</strong> Kattints a "Forgatás" gombra az aktuális elem elforgatásához.</li>
-            <li><strong>Elem tükrözése:</strong> Kattints a "Tükrözés" gombra az aktuális elem tükrözéséhez.</li>
-            <li><strong>Elem elhelyezése:</strong> Kattints a játéktábla egy üres mezőjére az aktuális elem elhelyezéséhez.</li>
+            <li><strong data-i18n="help.rotate"></strong> <span data-i18n="help.rotateDesc"></span></li>
+            <li><strong data-i18n="help.mirror"></strong> <span data-i18n="help.mirrorDesc"></span></li>
+            <li><strong data-i18n="help.place"></strong> <span data-i18n="help.placeDesc"></span></li>
           </ul>
-          <h3>Pontszámítás</h3>
-          <p>Minden elhelyezett elem pontokat ér az adott évszak küldetései alapján. Az összesített pontszámot
-            a képernyő jobb oldalán láthatod.</p>
-          <h3>Időkezelés</h3>
-          <p>A játék egy időzítővel rendelkezik, amely mutatja a hátralevő időt. Az idő lejárta után a játék véget ér, és megjelenik a végső pontszámod.</p>
-          <p>Az idő valójában a lerakható elemek számát jelzi, minden elemnél látható a jobb oldalon az időértéke.</p>
+          <h3 data-i18n="help.scoring"></h3>
+          <p data-i18n="help.scoringDesc"></p>
+          <h3 data-i18n="help.timeManagement"></h3>
+          <p data-i18n="help.timeManagementDesc1"></p>
+          <p data-i18n="help.timeManagementDesc2"></p>
         </div>
       </div>
     </div>
@@ -122,14 +111,13 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-black">Vége</h1>
+          <h1 class="modal-title fs-5 text-black" data-i18n="ui.gameOver"></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body text-black">
-          A játéknak vége! Ha új játékot kezdenél, nyomj az "Újraindítás" gombra!
+        <div class="modal-body text-black" data-i18n="ui.gameOverDesc">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-i18n="ui.ok"></button>
         </div>
       </div>
     </div>
@@ -137,6 +125,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+  <script src="./i18n.js"></script>
   <script src="./constants.js"></script>
   <script src="./seasonHandling.js"></script>
   <script src="./gameLogic.js"></script>

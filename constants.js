@@ -1,3 +1,6 @@
+
+
+
 //Element types
 const ELEM_FOREST = 'forest';
 const ELEM_WATER = 'water';
@@ -55,6 +58,12 @@ const SEASON_MISSION_MAPPINGS = {
 const MAX_GAME_TIME = 28;
 const LOCAL_STORAGE_CACHE = 'game-cache';
 
+// Translation
+function t(key) {
+    const parts = key.split(".");
+    return parts.reduce((obj, part) => obj?.[part], translations[currentLang]);
+}
+
 const MISSION_LIST =
 {
     "basic": [
@@ -85,6 +94,7 @@ const MISSION_LIST =
         },
         {
             "id": 0,
+            'name': 'dream_valley',
             "title": "Álmos-völgy",
             "description": "Minden olyan sorért, amelyben három erdőmező van, négy-négy pontot kapsz.",
             "points_aquired": 0,
@@ -108,6 +118,7 @@ const MISSION_LIST =
         },
         {
             "id": 0,
+            'name': 'potato_watering',
             "title": "Krumpliöntözés",
             "description": "A farmmezőiddel szomszédos vízmezőidért két-két pontot kapsz.",
             "points_aquired": 0,
@@ -153,6 +164,7 @@ const MISSION_LIST =
         },
         {
             "id": 0,
+            'name': 'border_region',
             "title": "Határvidék",
             "description": "Minden teli sorért vagy oszlopért 6-6 pontot kapsz.",
             "points_aquired": 0,
